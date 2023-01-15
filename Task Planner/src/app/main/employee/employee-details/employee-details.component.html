@@ -1,0 +1,107 @@
+<!-- Employee Details -->
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-4 col-lg-3" *ngFor="let data of userDetails;let i=index;">
+      <div class="our-team">
+        <div class="picture">
+          <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
+        </div>
+        <div class="team-content">
+          <h5 class="name">{{data.firstName}} {{data.lastName}}</h5>
+          <h6 class="title">{{data.role}} - E{{data.employeeRefNo}}</h6>
+        </div>
+        <ul class="social">
+          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa-solid fa-eye" aria-hidden="true"></a></li>
+          <li><a data-bs-toggle="modal" data-bs-target="#editEmpModal" (click)="getEmployeeDetails(data.employeeId)"
+              class="fa-solid fa-pen-to-square" aria-hidden="true"></a></li>
+          <li><a (click)="deleteEmployeedetails(data.employeeId,data.firstName)" class="fa-solid fa-trash" aria-hidden="true"></a></li>
+        </ul>
+      </div>
+   
+
+
+<!-- Update Employee Details -->
+<div class="modal h-100" id="editEmpModal" tabindex="-1" aria-labelledby="editEmpModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg h-100">
+    <div class="modal-content" >
+      <div class="modal-header ">
+        <h3 class="modal-title">EDIT EMPLOYEE DETAILS</h3>
+        <button type="button" #updateEmployeeModal class="btn-close" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <form class="p-3" [formGroup]="updateEmployeeDetail" (ngSubmit)="submit(updateEmployeeDetail)">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-6 mt-2  align-items-center">
+            <label class="form-label">First Name</label>
+            <input type="text" formControlName="firstName" id="firstName" class="form-control form-control-md" />
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-6 mt-2  align-items-center">
+            <label class="form-label" for="lastName">Last Name</label>
+            <input type="text" formControlName="lastName" id="lastName" class="form-control form-control-md" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 mt-2  align-items-center">
+            <label class="form-label">Email Address</label>
+            <input type="email" formControlName="emailId" id="emailId" class="form-control form-control-md" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-6 mt-2  align-items-center">
+            <label class="form-label">Date Of Birth</label>
+            <input type="date" formControlName="dateOfBirth" id="dateOfBirth" class="form-control form-control-md" />
+          </div>
+
+          <div class="col-sm-12 col-md-12 col-lg-6 mt-2  align-items-center">
+            <label class="form-label">Gender</label>
+            <select class="form-select form-select-md mb-3 form-control  form-control-md"
+              aria-label=".form-select-lg example" formControlName="gender" id="gender">
+              <option selected disabled> Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others">Others</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-6 mt-2  align-items-center">
+            <label class="form-label" for="dateOfJoining">Date Of Joining</label>
+            <input type="date" formControlName="dateOfJoining" id="dateOfJoining"
+              class="form-control form-control-md" />
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-6 mt-2  align-items-center">
+            <label class="form-label" for="role">Role</label>
+            <select class="form-select form-select-md mb-3 form-control  form-control-md"
+              aria-label=".form-select-lg example" formControlName="role" id="role">
+              <option selected disabled> Select Role</option>
+              <option value="Admin">Admin</option>
+              <option value="Operator">Operator</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 mt-2  align-items-center">
+            <label class="form-label">mobile Number</label>
+            <input type="text" formControlName="mobileNumber" id="mobileNumber" class="form-control form-control-md" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 mt-2  align-items-center">
+            <label class="form-label" for="address">Address</label>
+            <textarea type="text" formControlName="address" id="address"
+              class="form-control form-control-md"></textarea>
+          </div>
+        </div>
+      
+        <div class="row mt-4">
+          <div class="col-sm-12 col-md-12 col-lg-12 ">
+            <button type="Submit" class="btn btn-primary" style="float: right;">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+</div>

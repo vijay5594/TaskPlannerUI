@@ -1,0 +1,29 @@
+img{
+    width: 500px;
+    height: 600px;
+}  
+.card{
+   color:#f05c07;
+}
+
+h2{
+    text-align: center;
+    color: #0e0852;
+    font-weight:700 ;
+   
+}
+
+@media screen and (max-width: 981px) {
+  
+    img{
+display: none;
+    }
+}
+
+@media screen and (width: 1024px) {
+  
+    img{
+        width: 375px;
+        height: 500px;
+    }
+}

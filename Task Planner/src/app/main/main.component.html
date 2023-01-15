@@ -1,0 +1,58 @@
+<div id="sideNav" class="sideNav">
+    <div [style.display]="isNavOpen ? 'none': 'block'" class="imageBox pb-4">
+        <div class="d-flex align-items-center justify-content-center">
+            <div>
+                <ngx-avatar name="salman khan" class="margin-auto dflex" size="110" [style]="customStyle"></ngx-avatar>
+                <div class="d-flex pt-3 align-items-center justify-content-center">
+                    <h6 style="text-align: center; padding:0.5rem">Salman Khan <br />
+                        Admin</h6>
+                </div>
+        
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="likeUl">
+    <ul [ngClass]="isNavOpen ? '':'menuList'">
+        <li routerLink="Employee/EmployeeDetails" routerLinkActive="active" (click)="shortNav()">
+            <i class="fa-solid fa-house"></i>
+            <p [ngClass]="isNavOpen ? 'none': 'show'">Home</p>
+        </li>
+        <li routerLink="Employee/addUser" routerLinkActive="active"  (click)="shortNav()">
+            <i class="fa-solid fa-user-plus"></i>
+            <p [ngClass]="isNavOpen ? 'none': 'show'">Add Employee</p>
+        </li>
+        <li routerLink="/attendance" routerLinkActive="active" (click)="shortNav()">
+            <i class="fa-solid fa-calendar-days"></i>
+            <p [ngClass]="isNavOpen ? 'none': 'show'">Attendance</p>
+        </li>
+        <li routerLink="/leave" routerLinkActive="active" (click)="shortNav()">
+            <i class="fa-solid fa-person-walking-luggage"></i>
+            <p [ngClass]="isNavOpen ? 'none': 'show'">Leave</p>
+        </li>
+        
+        <li [ngClass]="{'active': step==='step7'}" (click)="logout()">
+            <i class="fa fa-power-off" aria-hidden="true"></i>
+            <p [ngClass]="isNavOpen ? 'none': 'show'">LogOut</p>
+        </li>
+    </ul>
+</div>
+</div>
+
+
+
+<main id="main">
+    <nav class="navbar navbar-dark">
+        <div class="container-fluid" style="height: 3rem;">
+            <button class="navbar-toggler" type="button" (click)="openNav()">
+                <i class="fa-solid fa-bars text-dark"></i>
+            </button>
+          
+                <ngx-avatar name="salman khan" class="margin-auto dflex" size="40" [style]="customStyle"></ngx-avatar>
+          
+        </div>
+    </nav>
+    <router-outlet></router-outlet>
+</main>

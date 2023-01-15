@@ -1,0 +1,42 @@
+
+img{
+    height:250px;
+    width: 400px;
+    padding: 1.5rem;
+    align-items: center;
+    align-content: center;
+}
+.form-check{
+    padding-left: 10rem;
+
+}
+
+@media screen and (max-width: 991px) {
+  
+    .form-check{
+        padding-left: 6rem;
+    
+    }
+}
+@media screen and (max-width: 300px) {
+  
+    img{
+        height:150px;
+        width: 250px;
+        padding: 1.5rem;
+        align-items: center;
+        align-content: center;
+    }
+   .card{
+    width: 275px;
+   }
+   .form-check{
+    padding: 5px !important;
+
+}
+button{
+    width: 30% !important;
+}
+  
+    
+}

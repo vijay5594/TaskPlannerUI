@@ -1,0 +1,92 @@
+
+    <div class="container">
+        <div class="card m-3">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-lg-6 mt-2 p-3">
+                    <img src="assets/signup.webp" class="image">
+                </div>
+               <div class="col-sm-12 col-md-12 col-lg-6 mt-2  align-items-center">
+                    <form  class="p-3" [formGroup]="employeeDetail" (ngSubmit)="addUser(employeeDetail.value)">
+                        <h2>Add New Employee</h2>
+                        <div class="row">
+                          <div class="col-sm-12 col-md-12 col-lg-6 mt-2  align-items-center">
+                                <label class="form-label" for="FirstName">First Name</label>
+                                <input type="text" formControlName="firstName" id="lastName"
+                                    class="form-control form-control-md" />
+                            </div>
+                          
+                           <div class="col-sm-12 col-md-12 col-lg-6 mt-2  align-items-center">
+                                <label class="form-label" for="lastName">Last Name</label>
+                                <input type="text" formControlName="lastName" id="lastName"
+                                    class="form-control form-control-md" />
+                            </div>
+                          </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12 mt-2  align-items-center">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" formControlName="emailId" id="emailId"
+                                    class="form-control form-control-md" />
+                            </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-sm-12 col-md-12 col-lg-6 mt-2  align-items-center">
+                                <label class="form-label" >Date Of Birth</label>
+                                <input type="date" formControlName="dateOfBirth" id="dateOfBirth"
+                                    class="form-control form-control-md" />
+                            </div>
+
+                           <div class="col-sm-12 col-md-12 col-lg-6 mt-2  align-items-center">
+                                <label class="form-label" >Gender</label>
+                                <select class="form-select form-select-md mb-3 form-control  form-control-md"
+                                    aria-label=".form-select-lg example" formControlName="gender" id="gender">
+                                    <option selected disabled> Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-sm-12 col-md-12 col-lg-6 mt-2  align-items-center">
+                                <label class="form-label" for="dateOfJoining">Date Of Joining</label>
+                                <input type="date" formControlName="dateOfJoining" id="dateOfJoining"
+                                    class="form-control form-control-md" />
+                            </div>
+                           <div class="col-sm-12 col-md-12 col-lg-6 mt-2  align-items-center">
+                                <label class="form-label" for="role">Role</label>
+                                <select class="form-select form-select-md mb-3 form-control  form-control-md"
+                                    aria-label=".form-select-lg example" formControlName="role" id="role">
+                                    <option selected disabled> Select Role</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Operator">Operator</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12 mt-2  align-items-center">
+                                <label class="form-label">mobile Number</label>
+                                <input type="text" formControlName="mobileNumber" id="mobileNumber"
+                                    class="form-control form-control-md" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12 mt-2  align-items-center">
+                                <label class="form-label" for="address">Address</label>
+                                <textarea type="text" formControlName="address" id="address"
+                                    class="form-control form-control-md"></textarea>
+                            </div>
+                        </div>
+                      
+                        <div class="row mt-4">
+                            <div class="col-sm-12 col-md-12 col-lg-12 ">
+                                <button type="Submit" class="btn btn-primary"  [disabled]="!employeeDetail.valid" style="float: right;" >Submit</button>
+                            </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+
+    
